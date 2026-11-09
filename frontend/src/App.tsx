@@ -86,7 +86,7 @@ function SignalsPanel({ signals }: { signals: WeatherSignal[] }) {
           </tr>
         </thead>
         <tbody>
-          {signals.map((s, i) => (
+          {signals.map((s) => (
             <tr
               key={s.market_id}
               className={`border-b border-neutral-900 ${
