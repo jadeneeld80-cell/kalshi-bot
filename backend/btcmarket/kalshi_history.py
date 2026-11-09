@@ -134,7 +134,7 @@ async def backfill_kxbtc_history(lookback: timedelta) -> int:
         }
         existing_candle_times = {row.open_time for row in db.query(KxBtcCandle.open_time).all()}
 
-        for market in markets:
+        for market in markets[:20]:
             ticker = market.get("ticker", "")
             if not ticker or ticker in already_backfilled:
                 continue
