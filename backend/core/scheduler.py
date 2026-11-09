@@ -975,7 +975,7 @@ def start_scheduler():
             try:
                 from backend.btcmarket.kalshi_history import backfill_kxbtc_history
                 from datetime import timedelta
-                added_snapshots = await backfill_kxbtc_history(timedelta(days=30))
+                added_snapshots = await backfill_kxbtc_history(timedelta(hours=6))
                 log_event("success", f"KXBTC15M real history backfilled: +{added_snapshots} snapshots")
             except Exception as e:
                 log_event("warning", f"KXBTC15M history backfill failed: {e}")
